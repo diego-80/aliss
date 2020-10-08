@@ -9,3 +9,21 @@ tallies the final score.
 NOTE: ALISS is great for long-term tracking of scores and statistics, but the
 Inference bit of her name means she is no susbstitute for a good Senior Head
 Chief Regional Supervising Referee. Final rulings are up to the SHCRSR.
+
+TECHNICAL STUFF AND HOW TO USE:
+Written in Python 3.8
+For greatest reliability, replace the template images ("jack.jpg," "green.jpg,"
+and "red.jpg") with respective templates created with your own balls using the
+code in "image_avg" on this same  GitHub profile (diego-80).
+
+"aliss.py," and the template images (either yours or the provided ones) should
+all be in the same directory. Also in this directory should be a subdirectory
+containing input images and a subdirectory where the output images should be
+placed (these can be the same). Specify these subdirectories from the command
+line in the order "/input /output," write them directly into the code in
+main(), or simply name the respective subdirectories "input" and "output" and
+the code's defaults will kick in.
+
+The final score based on one image per round will be printed to the console.
+A long-term tracking system which will cooperate with ALISS to aggregate scores
+and statistics over time is currently in development.
