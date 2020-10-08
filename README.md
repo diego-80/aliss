@@ -21,12 +21,13 @@ digital dimensions of your setup.
 
 "aliss.py," and the template images (either yours or the provided ones) should
 all be in the same directory. Also in this directory should be a subdirectory
-containing input images. Specify this subdirectory and an output one from the
-command line in the order "input output," write them directly into the code
-in main(), or simply name the respective subdirectories "input" and "output"
-and the code's defaults will kick in. If the output subdirectory already exists,
-output images will be placed there, otherwise ALISS will create a subdirectory
-with the specified name and place output images there.
+containing input images. Specify the input directory from the command line,
+hard-code it in main(), or simply name it "input" and ALISS's defaults will
+kick in. You can also optionally specify an output directory (either an existing
+one or one for ALISS to create) in the same ways. If you specify an input but
+not an output from the command line, ALISS will automatically create a
+subdirectory with the name of the input and "\_output" appended. If giving both
+input and output from the command line, do so in that order.
 
 The final score based on one image per round will be printed to the console.
 A long-term tracking system which will cooperate with ALISS to aggregate scores
