@@ -11,6 +11,7 @@ Inference bit of her name means she is no susbstitute for a good Senior Head
 Chief Regional Supervising Referee. Final rulings are up to the SHCRSR.
 
 TECHNICAL STUFF AND HOW TO USE:
+
 Written in Python 3.8
 
 For greatest reliability, replace the template images ("jack.jpg," "green.jpg,"
