@@ -30,6 +30,8 @@ def get_filenames(input_dir, output_dir):
     input_list = os.listdir(input_dir)
     input_files = []
     output_files = []
+    try: os.mkdir(output_dir)
+    except FileExistsError: pass
     for name in input_list:
         input_files.append(input_dir + '/' + name)
         output_files.append(output_dir + '/' + name[:-4] + '_output.jpg')
