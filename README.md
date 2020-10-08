@@ -7,7 +7,7 @@ back as she locates the balls, calculates their distances from the jack, and
 tallies the final score.
 
 NOTE: ALISS is great for long-term tracking of scores and statistics, but the
-Inference bit of her name means she is no susbstitute for a good Senior Head
+"Inference" bit of her name means she is no susbstitute for a good Senior Head
 Chief Regional Supervising Referee. Final rulings are up to the SHCRSR.
 
 TECHNICAL STUFF AND HOW TO USE:
