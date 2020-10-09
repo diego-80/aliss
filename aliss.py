@@ -2,6 +2,7 @@ import sys
 import os
 import cv2 as cv
 import numpy as np
+import statistics
 import math
 
 # jack diameter: 53px = 1.5in
@@ -17,11 +18,19 @@ def main(*dirs):
     # read input filenames and prepare output files
     ins, outs = get_filenames(f[0], f[1])
     files = zip(ins, outs)
+    # track average distances/errors for each round (only used in companion BLOSSOM logging system)
+    green_dists = []
+    red_dists = []
     # track scores for each round
     round_scores = []
     for pair in files:
         # calculate scores and generate output images for each round
-        round_scores.append(round_analysis(pair[0], pair[1]))
+        results = round_analysis(pair[0], pair[1])
+        green_dists.append(results[0][0])
+        red_dists.append(results[0][1])
+        round_scores.append(results[1])
+    # mean distances
+    dists = (px_to_in(statistics.mean(green_dists)), px_to_in(statistics.mean(red_dists)))
     # aggregate scores into final score
     points = [0, 0]
     for s in round_scores:
@@ -29,7 +38,7 @@ def main(*dirs):
     # print final scores
     print('Green:', points[0])
     print('Red:', points[1])
-    return f[0], points
+    return f[0], len(ins), dists, points
 
 
 def get_filenames(input_dir, output_dir):
@@ -58,10 +67,11 @@ def round_analysis(round_image, output_file):
     green_dist = ball_id(image, jack_center, green)
     red_dist = ball_id(image, jack_center, red)
     # calculate and return score of the round
-    scoring = score(green_dist, red_dist)
-    score_gui(image, scoring)
+    accuracy = (statistics.mean(green_dist), statistics.mean(red_dist))
+    scores = score(green_dist, red_dist)
+    score_gui(image, scores)
     cv.imwrite(output_file, image)
-    return scoring
+    return accuracy, scores
 
 
 def find_scale(image, templates, speed_factor=1):
