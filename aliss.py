@@ -29,7 +29,7 @@ def main(*dirs):
     # print final scores
     print('Green:', points[0])
     print('Red:', points[1])
-    return points
+    return f[0], points
 
 
 def get_filenames(input_dir, output_dir):
