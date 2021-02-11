@@ -18,7 +18,10 @@ For greatest reliability, replace the template images ("jack.jpg," "green.jpg,"
 and "red.jpg") with respective templates created with your own balls using the
 code in "image_avg" on this same  GitHub profile (diego-80). Note that you'll
 have to adjust the px_to_in() funtion to match the particular physical and
-digital dimensions of your setup.
+digital dimensions of your setup. The 'input' and 'output' folders contained in
+this repo provide example images and results - you should replace the images in
+'input' with your own (or see below for how to specify another folder to use) and
+ALISS will write new output images.
 
 "aliss.py," and the template images (either yours or the provided ones) should
 all be in the same directory. Also in this directory should be a subdirectory
